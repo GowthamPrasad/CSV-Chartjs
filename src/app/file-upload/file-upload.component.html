@@ -1,0 +1,54 @@
+<html>
+  <body>
+  
+<input type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)" accept=".csv" />    
+<button type="button" (click)="createChart()">
+CHART
+</button>
+
+<table id="keywords" class="table table-striped table-bordered" cellspacing="0" width="100%" *ngIf="records.length > 0">    
+  <thead>    
+    <tr >   
+        <th *ngFor="let header of headerArray;">{{header}}</th>      
+    </tr>    
+  </thead>    
+  <tbody>    
+    <tr *ngFor="let record of records;let i = index;">    
+      <td> <span>{{record.c1}}</span> </td>    
+      <td> <span>{{record.c2}}</span> </td>    
+      <td> <span>{{record.c3}}</span> </td>    
+      <td> <span>{{record.c4}}</span> </td>    
+      <td> <span>{{record.c5}}</span> </td>   
+      <td> <span>{{record.c6}}</span> </td>    
+      <td> <span>{{record.c7}}</span> </td>    
+      <td> <span>{{record.c8}}</span> </td>    
+      <td> <span>{{record.c9}}</span> </td> 
+      <!-- <td> <span>{{record.Position1}}</span> </td>    
+      <td> <span>{{record.ArtistName1}}</span> </td>    
+      <td> <span>{{record.SongName1}}</span> </td>    
+      <td> <span>{{record.Days1}}</span> </td>    
+      <td> <span>{{record.Top10Times1}}</span> </td>    
+      <td> <span>{{record.PeakPosition1}}</span> </td>    
+      <td> <span>{{record.PeakPositionxTimes1}}</span> </td>    
+      <td> <span>{{record.PeakStreams1}}</span> </td>    
+      <td> <span>{{record.TotalStreams1}}</span> </td>     -->
+   
+
+    </tr>    
+  </tbody>    
+</table> 
+
+<!-- <script>
+  $(function(){
+    $('#keywords').tablesorter(); 
+  });
+  </script> -->
+
+  <div class="chart-container">
+    <canvas  id="MyChart" >{{ chart }}</canvas>
+</div>
+
+
+</body>
+</html>
+
